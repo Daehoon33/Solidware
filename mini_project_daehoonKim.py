@@ -22,7 +22,6 @@ Data_file = 'imports-85.data'
 # num = index of attribute
 # outputs:
 # x_list = updated list of data
-
 def replace_function(data, num):
     x_list = []
     for i in data:
@@ -65,7 +64,6 @@ def mse_function(n, x, y, w):
 # a = learning rate
 # output:
 # w = uploaded list of parameter values 
-
 def grad_descent(n, x, y, w, a):
     for i in range(n):
         y_hat = w[0] + w[1] * x[i] # compute prediction
@@ -76,6 +74,8 @@ def grad_descent(n, x, y, w, a):
         w[1] = w[1] + a * error * x[i] * (1.0 / n)
     return w
 
+# ------------
+# prepare data
 # get data from a file
 try: 
     # open data file in csv format and read 
@@ -88,7 +88,6 @@ except Exception as x:
     print 'there was an error:' + str(x)
     sys.exit()    
 
-# Data preparation 
 # remove features 'symboling'
 raw_data = [rec[1:] for rec in raw_data]
 # skip data sampels with missing values in the target
@@ -103,6 +102,7 @@ x = replace_function(filtered_data, 20) # replace missing value(?) by mean
 # y = normalized_losses (column 2)
 y = [float(i[0]) for i in filtered_data]
 
+# ------------
 # run gradient descent to compute the regression equation
 # initialise variables for this model 
 a = 0.0001
@@ -137,7 +137,7 @@ while(not converge):
     else:
         prev_mse = curr_mse
 
-
+#-----------
 # use scikit-learn's linear regression model for comparison
 lr = linear_model.LinearRegression()
 x_target = [[i] for i in x]
