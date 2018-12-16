@@ -1,15 +1,15 @@
 # Automobile
 A mini-project for making a simple linear regression 
 
-* Language
+* Language: 
 python 2.7
 
-* Data
+* Data: 
 https://archive.ics.uci.edu/ml/datasets/Automobile
 
-* Method
+* Method: 
 A simple linear regression using gradient descent
 
-* Author
+* Author: 
 Daehoon Kim
 
