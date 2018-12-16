@@ -143,7 +143,7 @@ lr = linear_model.LinearRegression()
 x_target = [[i] for i in x]
 y_target = y
 lr.fit(x_target, y_target)
-print ('scikit regression equation: y = %f + %f * x' % (lr.intercept_, lr.coef_[0]))
+print ('scikit regression equation: y = 3f + %f * x' % (lr.intercept_, lr.coef_[0]))
 print ('MSE of scikit model: %f' % mean_squared_error(y_target, lr.predict(x_target)))
 
 # compute the prediction of my model and scikit-learn model
@@ -161,8 +161,8 @@ plt.plot(x, y_hat_sci, 'g', linewidth=2)
 # add plot labels and ticks
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
-plt.xlabel('horse_power', fontsize=14)
-plt.ylabel('normalised_loss',fontsize=14)
-plt.title('iteration: '+ str(num_iters) + ': y= ' + str(w[0]) + ' + ' + str( w[1]) + 'x')
+plt.xlabel('horsepower', fontsize=14)
+plt.ylabel('normalised-losses',fontsize=14)
+plt.title('iteration: '+ str(num_iters) + ' y= ' + str(round(w[0], 3)) + ' + ' + str(round(w[1], 3)) + '*' + 'x')
 plt.show()
 plt.close()
